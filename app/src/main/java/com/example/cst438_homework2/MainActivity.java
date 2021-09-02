@@ -17,19 +17,26 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static Intent intentFactory(Context context, int userId) {
+    public static Intent intentFactory(Context context, int userId, String username) {
         Intent intent = new Intent(context, MainActivity.class);
         intent.putExtra("userId", userId);
+        intent.putExtra("username", username);
         return intent;
     }
 
     private TextView textViewResult;
+    private TextView showUserIdName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        showUserIdName = findViewById(R.id.showUserId);
+        String text = "";
+        text += "Welcome " + getIntent().getStringExtra("username");
+        text += " UserId: " + getIntent().getIntExtra("userId", -1);
+        showUserIdName.append(text);
         textViewResult = findViewById(R.id.text_view_result);
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -53,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
                 for(Post post : posts) {
                     String content = "";
-                    content += "ID: " + post.getId() + "\n";
                     content += "User ID: " + post.getUserId() + "\n";
+                    content += "ID: " + post.getId() + "\n";
                     content += "Title: " + post.getTitle() + "\n";
                     content += "Text: " + post.getText() + "\n\n";
 

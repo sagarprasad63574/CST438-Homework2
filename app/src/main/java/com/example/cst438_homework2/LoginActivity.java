@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 errorMessage.setTextColor(Color.WHITE);
 
-                Intent intent = MainActivity.intentFactory(LoginActivity.this, temp.userId);
+                Intent intent = MainActivity.intentFactory(LoginActivity.this, temp.userId, temp.username);
                 startActivity(intent);
             }
         });
