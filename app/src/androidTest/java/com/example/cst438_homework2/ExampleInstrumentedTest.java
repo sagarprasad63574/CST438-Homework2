@@ -1,11 +1,14 @@
 package com.example.cst438_homework2;
 
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 import android.content.Context;
+import android.util.Log;
 
+import androidx.test.core.app.ActivityScenario;
 import androidx.test.espresso.core.internal.deps.guava.base.Function;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -26,7 +29,10 @@ public class ExampleInstrumentedTest {
     @Test
     public void useAppContext() {
         // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.cst438_homework2", appContext.getPackageName());
+        // Login activity pass in context to main activity
+        //Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        //assertEquals("com.example.cst438_homework2", appContext.getPackageName());
+
+        
     }
 }

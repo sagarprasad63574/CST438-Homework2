@@ -33,14 +33,14 @@ public class LoginActivity extends AppCompatActivity {
                 String password = passwordET.getText().toString().trim();
                 Accounts temp = Accounts.getByUsername(username);
                 if(temp == null){
-                    usernameET.setBackgroundColor(Color.BLUE);
+                    usernameET.setBackgroundColor(Color.MAGENTA);
                     errorMessage.setText("Wrong Username");
                     return;
                 }
                 errorMessage.setTextColor(Color.WHITE);
 
                 if(Accounts.getByPassword(password) == null) {
-                    passwordET.setBackgroundColor(Color.BLUE);
+                    passwordET.setBackgroundColor(Color.MAGENTA);
                     errorMessage.setText("Wrong Password");
                     return;
                 }
