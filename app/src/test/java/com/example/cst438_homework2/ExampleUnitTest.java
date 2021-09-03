@@ -11,7 +11,8 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
 
-    //This test shows a valid username
+    /**This test shows a valid username*/
+
     @Test
     public void usernameTestTrue (){
         Accounts test = null;
@@ -20,7 +21,8 @@ public class ExampleUnitTest {
         assertNotNull(test);
     }
 
-    //This test shows a invalid username
+    /**This test shows a invalid username*/
+
     @Test
     public void usernameTestFalse () {
         Accounts test = null;
@@ -30,7 +32,8 @@ public class ExampleUnitTest {
 
     }
 
-    //This test shows a valid password
+    /**This test shows a valid password */
+
     @Test
     public void passwordTestTrue () {
         Accounts test = null;
@@ -39,7 +42,8 @@ public class ExampleUnitTest {
         assertNotNull(test);
     }
 
-    //This test shows a invalid password
+    /**This test shows a invalid password*/
+
     @Test
     public void passwordTestFalse () {
         Accounts test = null;
